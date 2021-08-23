@@ -1,0 +1,50 @@
+[
+  {
+    "name": "accessories",
+    "description": "good accessories"
+  },
+  {
+    "name": "basics",
+    "description": "basic cloth"
+  },
+  {
+    "name": "jackets",
+    "description": "jackets for every taste"
+  },
+  {
+    "name": "jeans",
+    "description": "perfect denim"
+  },
+  {
+    "name": "knits",
+    "description": "beautiful knits"
+  },
+  {
+    "name": "overalls",
+    "description": "some stuff"
+  },
+  {
+    "name": "over coats",
+    "description": "coats for every weather"
+  },
+  {
+    "name": "shoes",
+    "description": "comfortable shoes"
+  },
+  {
+    "name": "sweatshirts",
+    "description": "cozy sweatshirts"
+  },
+  {
+    "name": "trousers",
+    "description": "comfortable trousers"
+  },
+  {
+    "name": "tops",
+    "description": "for everybody"
+  },
+  {
+    "name": "watersuits",
+    "description": "awesome watersuits"
+  }
+]

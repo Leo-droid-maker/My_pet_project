@@ -1,0 +1,125 @@
+{% load static %}
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% if title %}{{ title|title }} - {% endif %} Shop
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Biruang Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- bootstarp-css -->
+    {% block bootstrap %}
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    {% endblock %}
+    <!--// bootstarp-css -->
+    <!-- css -->
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all"/>
+    {% endblock %}
+    <!--// css -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!--fonts-->
+    {% block fonts %}
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+              rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700'
+              rel='stylesheet' type='text/css'>
+    {% endblock %}
+    <!--/fonts-->
+    <!--swiper-banner-css-->
+        <link rel="stylesheet" href="{% static 'css/swiper-bundle.css' %}" type="text/css" media="all" />
+    <!--/swiper-banner-css-->
+    <!-- dropdown -->
+    <script src="{% static 'js/jquery.easydropdown.js' %}"></script>
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <script src="{% static 'js/scripts.js' %}" type="text/javascript"></script>
+    <!--for single page-->
+    <link rel="stylesheet" href="{% static 'css/etalage.css' %}">
+    <script src="{% static 'js/jquery.etalage.min.js' %}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            $('#etalage').etalage({
+                thumb_image_width: 300,
+                thumb_image_height: 400,
+                source_image_width: 800,
+                source_image_height: 1000,
+                show_hint: true,
+                click_callback: function (image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                }
+            });
+
+        });
+    </script>
+    <!--/for single page-->
+    <script src="{% static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+{% include 'myprojectapp/includes/inc_header.html' %}
+{% block content %}
+{% endblock %}
+{% include 'myprojectapp/includes/inc_footer.html' %}
+<!--swiper-banner-js-->
+<script src="{% static 'js/swiper-bundle.js' %}"></script>
+<script>
+      new Swiper('.swiper-container', {
+  // Optional parameters
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+<!--/swiper-banner-js-->
+</body>
+</html>

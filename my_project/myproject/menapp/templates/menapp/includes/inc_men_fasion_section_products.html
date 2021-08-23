@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="fashion-section">
+    <div class="fashion-grid1">
+        {% for product in men_products %}
+        <div class="col-md-3 fashion-grid">
+            <a href="{% url 'single:product' product.pk %}"><img src="/media/{{ product.image }}" alt=""/>
+                <div class="product">
+                    <h3>{{ product.name }}</h3>
+                    <p><span></span> {{ product.price }} &euro;</p>
+                </div>
+            </a>
+            <div class="fashion-view"><span></span>
+                <div class="clearfix"></div>
+                <h4><a href="{% url 'single:product' product.pk %}">Quick View</a></h4>
+                <h4><a href="{% url 'cart:add_to_cart' product.pk %}">Add to cart</a></h4>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="clearfix"></div>
+    </div>
+</div>
+</div>

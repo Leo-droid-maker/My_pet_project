@@ -1,0 +1,29 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <div class="user_delete">
+    Are you sure that you want to
+      {% if object.is_active %}
+      delete
+      {% else %}
+      restore
+      {% endif %} Product {{ object.name }} ?
+
+    <form action="{% url 'admin:product_delete' object.pk %}"
+          method="post">
+      {% csrf_token %}
+        {% if object.is_active %}
+            <input class="btn btn-danger" type="submit" value="delete">
+        {% else %}
+            <input class="btn btn-danger" type="submit" value="restore">
+        {% endif %}
+    </form>
+    <button class="btn btn-success">
+      <a href="{% url 'admin:product_read' object.category.pk%}">
+        Cancel
+      </a>
+    </button>
+  </div>
+{% endblock %}

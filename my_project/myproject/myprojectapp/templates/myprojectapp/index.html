@@ -1,0 +1,81 @@
+{% extends 'myprojectapp/base.html' %}
+{% load static %}
+{% block content %}
+	<!-- banner -->
+	{% include 'myprojectapp/includes/inc_banner_index.html' %}
+	{% comment %} {% include 'myprojectapp/includes/inc_new_swiper_banner.html' %} {% endcomment %}
+	<!-- //banner -->
+	<!-- banner-bottom -->
+	{% include 'myprojectapp/includes/inc_banner_bottom_index.html' %}
+	<!-- banner-bottom -->
+	<!-- products -->
+	{% include 'myprojectapp/includes/inc_popular_products_index.html' %}
+	<!-- // products -->
+	<!-- products-bottom -->
+	<div class="products-bottom">
+		<!-- container -->
+		<div class="container">
+			<div class="col-md-3 products-bottom-left">
+				<h3>Biruang <span>Free PSD</span></h3>
+				<p>NEQUE PORRO  
+					ERIKE SUPERUS DA
+					DOLOREM IPSUM
+					GOOD LUCK
+				</p>
+				<div class="social-icons">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="chrome"></a></li>
+						<li><a href="#" class="vimeo"></a></li>
+						<li><a href="#" class="rss"></a></li>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="products-bottom-middle">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dictum lectus 
+						sit amet varius pulvinar. Proin vitae dui tincidunt nibh facilisis pellentesque. 
+						Fusce tortor turpis, facilisis ut condimentum eu, sagittis at est.
+
+						<span>Praesent egestas posuere urna a egestas. Maecenas facilisis orci vitae ante 
+						tempor accumsan. Aenean aliquam justo ac sagittis vehicula. Nam mattis 
+						pretium odio sit amet vulputate.
+						</span>
+						
+						Quisque non lobortis orci. Morbi augue mauris, ultrices at fermentum ac, 
+						consequat vitae magna. Pellentesque non cursus mi, eu cursus nunc. Nullam
+						 et odio tristique, volutpat urna vitae, dignissim orci. Fusce eu nulla urna.
+						This template was created by Erik Padamans.
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4 map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2176.1155758807386!2d24.1204355!3d56.946821099999994!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1426480456493" frameborder="0" style="border:0"></iframe>
+				<div class="location">
+					<p>Stacijas laukums 2, Riga</p>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //container-->
+	</div>
+	<!-- //products-bottom -->
+	<!-- sign-up -->
+	<div class="sign-up">
+		<!-- container -->
+		<div class="container">
+			<div class="sign-up-left">
+				<p><span>Sign up</span> for exclusive sales and product news</p>
+			</div>
+			<div class="sign-up-right">
+				<form>
+					<input type="text" value="eony321v@gmail.com" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'eony321v@gmail.com';}" required="">
+					<input type="submit" value="sign up">
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //sign-up -->
+{% endblock %}

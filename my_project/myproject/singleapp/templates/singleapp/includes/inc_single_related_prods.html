@@ -1,0 +1,25 @@
+{% load static%}
+<div class="related">
+    <h3>RELATED PRODUCTS</h3>
+    <div class="related-grids">
+        {% for product in related_products %}
+            <div class="related-grid">
+                <div class="col-md-9 related-left">
+                    <div class="col-md-3 related-left-left">
+                        <img src="/media/{{ product.image }}" alt=""/>
+                    </div>
+                    <div class="col-md-9 related-left-right">
+                        <h5>{{product.name}}</h5>
+                        <p>{{product.description}}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 related-right">
+                    <p> {{product.price}} </p>
+                    <a href="{% url 'cart:add_to_cart' product.pk %}">Add to cart</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

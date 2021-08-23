@@ -1,0 +1,121 @@
+{% load static %}
+<!-- header -->
+{% block header %}
+    <div class="header">
+        <!-- container -->
+        <div class="container">
+            <!-- header-top -->
+            <div class="header-top">
+                <div class="header-logo">
+                    <a href="{% url 'main' %}"><img src="{% static 'images/logo.png' %}" alt=""/></a>
+                </div>
+                <div class="header-right">
+                    <ul>
+                        <li class="phone">+371 282 20 760</li>
+                        <li class="mail"><a href="mailto:example@mail.com">eony321v@gmail.com</a></li>
+                        <li class="checkout">
+                            <a href="{% url 'cart:view_cart' %}">
+                                {% if cart %}
+                                    <span class="cart">$ {{ cart.0.total_cost|floatformat:0 }}
+                                ({{ cart.0.total_quantity }} items)</span>
+                                {% else %}
+                                    <span class="cart"> cart is empty </span>
+                                    {#                                <span class="check">Checkout</span>#}
+                                {% endif %}
+                            </a>
+                            {#                            <div class="shopping">#}
+                            {#                                <h5>Your Shopping Cart is empty.</h5>#}
+                            {#                                <p>Give it purpose—fill it with books, movies, mobiles, cameras, toys and fashion#}
+                            {#                                    jewellery.</p>#}
+                            {#                            </div>#}
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- //header-top -->
+            <div class="top-nav">
+                <span class="menu"><img src="{% static 'images/menu.png' %}" alt=""></span>
+                <ul class="nav">
+                    <li class="dropdown1"><a href="{% url 'main' %}">HOME</a>
+                        <ul class="dropdown2">
+                            <li><a href="{% url 'single:single' %}">lorem</a></li>
+                            <li><a href="{% url 'single:single' %}">dorem sia</a></li>
+                            <li><a href="{% url 'single:single' %}">erik</a></li>
+                            <li><a href="{% url 'single:single' %}">ipsum padamans</a></li>
+                            <li><a href="{% url 'single:single' %}">behance</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown1"><a href="{% url 'men:men' %}">MEN</a>
+                        <ul class="dropdown2">
+                            <li><a href="{% url 'men:men' %}">Clothing</a></li>
+                            <li><a href="{% url 'men:men' %}">Footwear</a></li>
+                            <li><a href="{% url 'men:men' %}">Watches</a></li>
+                            <li><a href="{% url 'men:men'%}">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown1"><a href="{% url 'women:women' %}">WOMEN</a>
+                        <ul class="dropdown2">
+                            <li><a href="{% url 'women:women' %}">Ethnic Wear</a></li>
+                            <li><a href="{% url 'women:women' %}">Western Wear</a></li>
+                            <li><a href="{% url 'women:women' %}">All Jewellery</a></li>
+                            <li><a href="{% url 'women:women' %}">Beauty & Wellness</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown1"><a href="{% url 'kids:kids' %}">KIDS</a>
+                        <ul class="dropdown2">
+                            <li><a href="{% url 'kids:kids' %}">Clothing</a></li>
+                            <li><a href="{% url 'kids:kids' %}">Footwear</a></li>
+                            <li><a href="{% url 'kids:kids' %}">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown1"><a href="{% url 'men:men' %}">SALE</a>
+                        <ul class="dropdown2">
+                            <li><a href="{% url 'men:men' %}">Clothing</a></li>
+                            <li><a href="{% url 'men:men' %}">Footwear</a></li>
+                            <li><a href="{% url 'men:men' %}">Watches</a></li>
+                            <li><a href="{% url 'men:men' %}">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'about' %}">ABOUT US</a></li>
+                    <li><a href="{% url '404' %}">SUPPORT</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'auth:edit' %}">
+                            {{ user.first_name|default:'User' }}</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                        <li>
+                            <a href="{% url 'admin:user_read' %}">
+                                Administration
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'auth:logout' %}">exit</a>
+                        {% else %}
+                            <a href="{% url 'auth:login' %}">enter</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <form>
+                    <input type="text" value="Search..." onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Search...';}" required="">
+                </form>
+            </div>
+            <div class="clearfix"></div>
+            <!-- script-for-menu -->
+            <script>
+                $("span.menu").click(function () {
+                    $(" ul.nav").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+        </div>
+        <!-- //container -->
+    </div>
+{% endblock %}
+<!-- //header -->

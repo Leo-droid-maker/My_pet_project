@@ -1,0 +1,20 @@
+[
+  {
+    "category": "shoes",
+    "name": "FOOTBALL SHOES",
+    "image": "banner_images/3.jpg",
+    "description": "shoes for football"
+  },
+  {
+    "category": "accessories",
+    "name": "BAGS & ACCESSORIES",
+    "image": "banner_images/5.jpg",
+    "description": "perfect BAGS & ACCESSORIES"
+  },
+  {
+    "category": "basics",
+    "name": "GOODS FOR WOMEN",
+    "image": "banner_images/7.jpg",
+    "description": "girls rules!"
+  }
+]

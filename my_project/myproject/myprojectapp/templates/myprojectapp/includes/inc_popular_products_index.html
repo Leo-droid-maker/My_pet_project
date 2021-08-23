@@ -1,0 +1,40 @@
+{% load static %}
+<div class="products">
+		<!-- container -->
+		<div class="container">
+			<div class="products-heading">
+				<h3>POPULAR PRODUCTS</h3>
+			</div>
+			<div class="products-grids">
+                {% for product in products %}
+
+                    <div class="col-md-3 product-left-grid">
+                        <div class="product-grid">
+                            <div class="product-grid-text">
+                                <a href="{% url 'single:product' product.pk %}"><img src="/media/{{ product.image }}" alt="{{ product.name }}"/></a>
+                                <div class="products-grid-info">
+                                    <h3>{{ product.name }}</h3>
+                                    <h4>{{ product.short_desc }}</h4>
+                                    <p>{{ product.description }}
+                                    </p>
+                                    <div class="price">
+                                        <p>$ {{ product.price }}</p>
+                                    </div>
+                                    <div class="like">
+                                        <a href="#"><img src="{% static 'images/like.png' %}" alt=""/></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="plus">
+                                    <a href="{% url 'single:product' product.pk %}"><img src="{% static 'images/plus.png' %}" alt=""/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+		<!-- //container -->
+	</div>

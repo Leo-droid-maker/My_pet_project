@@ -1,0 +1,27 @@
+[
+    {
+        "name": "RIGHT IS WHITE.LEFT IS BLACK",
+        "main_text": "Inspired by Brasil’s bold colors and matching up to football’s on-pitch playmakers, these kicks are ready to stand out.",
+        "image": "banner_images/1.jpg"
+    },
+    {
+        "name": "RIGHT IS BLUE.LEFT IS PINK",
+        "main_text": "Inspired by bold colors and matching up to football’s on-pitch playmakers, these kicks are ready to stand out.",
+        "image": "banner_images/4.jpg"
+    },
+    {
+        "name": "RIGHT IS PINK.",
+        "main_text": "Inspired by bold colors and matching up to football’s on-pitch playmakers, these kicks are ready to stand out.",
+        "image": "banner_images/6.jpg"
+    },
+    {
+        "name": "RIGHT IS BLUE.RIGHT IS WHITE.",
+        "main_text": "Inspired by bold colors and matching up to football’s on-pitch playmakers, these kicks are ready to stand out.",
+        "image": "banner_images/4.jpg"
+    },
+    {
+        "name": "RIGHT IS BLUE.",
+        "main_text": "Inspired by bold colors and matching up to football’s on-pitch playmakers, these kicks are ready to stand out.",
+        "image": "banner_images/6.jpg"
+    }
+]

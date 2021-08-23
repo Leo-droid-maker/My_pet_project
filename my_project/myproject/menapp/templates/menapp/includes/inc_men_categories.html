@@ -1,0 +1,11 @@
+<div class="categories">
+    <h3>CATEGORIES</h3>
+    <ul>
+        <li><a href="{% url 'men:men_category' 0 %}">
+            all
+        </a></li>
+        {% for category in categories_menu %}
+            <li><a href="{% url 'men:men_category' category.pk %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

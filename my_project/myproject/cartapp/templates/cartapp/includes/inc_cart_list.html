@@ -1,0 +1,19 @@
+{% for item in cart_items %}
+    <div class="basket_record">
+        <img src="/media/{{ item.product.image }}" alt=""/>
+        <span class="category_name">{{ item.product.category.name }}</span>
+        <span class="category_name">{{ item.product.name }}</span>
+        <span class="category_name">{{ item.product.price }} USD</span>
+        <input type="number" name="{{ item.pk }}" min="0"  value="{{ item.quantity }}">
+        <span class="product_cost">{{ item.product_cost }} USD</span>
+        <button class="btn btn-round">
+            <a href="{% url 'cart:remove_from_cart' item.pk %}">remove from cart</a>
+        </button>
+    </div>
+{% endfor %}
+{% if cart_items %}
+    <div class="basket_summary">
+        In cart: {{ cart_items.0.total_quantity }} items on cost
+        {{ cart_items.0.total_cost }} USD
+    </div>
+{% endif %}
