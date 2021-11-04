@@ -26,9 +26,9 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", default='Key file does not exists')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['89.108.79.125']
 
 # Application definition
 
@@ -84,9 +84,14 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'myproject',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres'
     }
 }
 
