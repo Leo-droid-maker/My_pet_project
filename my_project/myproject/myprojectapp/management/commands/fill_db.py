@@ -15,29 +15,29 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        # categories = load_from_json('categories')
-        # ProductCategory.objects.all().delete()
-        # for category in categories:
-        #     ProductCategory.objects.create(**category)
+        categories = load_from_json('categories')
+        ProductCategory.objects.all().delete()
+        for category in categories:
+            ProductCategory.objects.create(**category)
 
-        # bottom_banners = load_from_json('products_for_bottom_banner')
-        # BottomBanners.objects.all().delete()
-        # for banner in bottom_banners:
-        #     _category = ProductCategory.objects.get(name=banner['category'])
-        #     banner['category'] = _category
-        #     BottomBanners.objects.create(**banner)
+        bottom_banners = load_from_json('products_for_bottom_banner')
+        BottomBanners.objects.all().delete()
+        for banner in bottom_banners:
+            _category = ProductCategory.objects.get(name=banner['category'])
+            banner['category'] = _category
+            BottomBanners.objects.create(**banner)
 
-        # products = load_from_json('products')
-        # Product.objects.all().delete()
-        # for product in products:
-        #     _category = ProductCategory.objects.get(name=product['category'])
-        #     product['category'] = _category
-        #     Product.objects.create(**product)
+        products = load_from_json('products')
+        Product.objects.all().delete()
+        for product in products:
+            _category = ProductCategory.objects.get(name=product['category'])
+            product['category'] = _category
+            Product.objects.create(**product)
 
         main_banner = load_from_json('images_for_main_banner')
         MainBanner.objects.all().delete()
         for banner in main_banner:
             MainBanner.objects.create(**banner)
 
-        # ShopUser.objects.create_superuser(
-        #     'django', 'django@local.gb', 'geekbrains', age=34)
+        ShopUser.objects.create_superuser(
+            'django', 'django@local.gb', 'geekbrains', age=34)
